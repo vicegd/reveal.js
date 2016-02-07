@@ -9,10 +9,10 @@ Puede visitarse la [Web oficial] (http://revealjs.azurewebsites.net/#/) para acc
 #### Más información:
 - [Web oficial de Reveal.JS](http://lab.hakim.se/reveal-js/#/)
 - [Repositorio GitHub con el código fuente de Reveal.JS y documentación](https://github.com/hakimel/reveal.js)
-- Hakim El Hattab [Creador de Reveal.JS](http://hakim.se/)
+- [Hakim El Hattab - creador de Reveal.JS](http://hakim.se/)
 
 #### Licencia
 
 Licencia [MIT] (https://es.wikipedia.org/wiki/Licencia_MIT)
 
-Copyright (C) 2016
+Copyright (C) 2016 - [Vicente García Díaz] (http://www.vicegd.com)
