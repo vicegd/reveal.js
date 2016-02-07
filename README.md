@@ -8,8 +8,8 @@ Puede visitarse la [Web oficial] (http://revealjs.azurewebsites.net/#/) para acc
 
 #### Más información:
 - [Web oficial de Reveal.JS](http://lab.hakim.se/reveal-js/#/)
-- [Repositorio GitHub con el código fuente de Reveal.JS y documentación](https://github.com/hakimel/reveal.js): Up-to-date version history.
-- [Creador de Reveal.JS](http://hakim.se/)
+- [Repositorio GitHub con el código fuente de Reveal.JS y documentación](https://github.com/hakimel/reveal.js)
+- Hakim El Hattab [Creador de Reveal.JS](http://hakim.se/)
 
 #### Licencia
 
