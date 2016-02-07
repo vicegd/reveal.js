@@ -1,4 +1,4 @@
-# reveal.js
+# Introducción a Reveal.JS
 
 Reveal.JS es un framework para crear presentaciones utilizando estándares Web (HTML, CSS y JavaScript).
 
@@ -9,9 +9,9 @@ Puede visitarse la [Web oficial] (http://revealjs.azurewebsites.net/#/) para acc
 #### Más información:
 - [Web oficial de Reveal.JS](http://lab.hakim.se/reveal-js/#/)
 - [Repositorio GitHub con el código fuente de Reveal.JS y documentación](https://github.com/hakimel/reveal.js): Up-to-date version history.
-- [Creado Reveal.JS](http://hakim.se/)
+- [Creador de Reveal.JS](http://hakim.se/)
 
-## Licencia
+#### Licencia
 
 Licencia [MIT] (https://es.wikipedia.org/wiki/Licencia_MIT)
 
