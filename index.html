@@ -11,9 +11,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/serif.css" id="theme">
+		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <link rel="stylesheet" href="css/customStyle.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -23,6 +25,10 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+
+        <style type="text/css">
+            p { text-align: left; }
+        </style>
 
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -37,17 +43,23 @@
 				<section>
 					<h1>Reveal.js</h1>
 					<h3>Producción de presentaciones multimedia</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
+					<p>	<small><a href="http://www.vicegd.com">Vicente García Díaz</a></small></p>
 				</section>
 
 				<section>
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-					</p>
-				</section>
+					<h2>Introducción</h2>
+					<p>Reveal.JS es un framework que permite crear presentaciones interactivas utilizando estándares Web</p>
+                    <p>Se puede utilizar libremente código HTML, CSS y JavaScript</p>
+                    <p>Las presentaciones se adaptan al dispositivo en el que se visualicen</p>
+   			    </section>
+
+                <section>
+                    <h2>Obtención</h2>
+                    <p>La Web oficial es <a href="http://lab.hakim.se/reveal-js/#/" target="_blank">Reveal.JS</a></p>
+                    <p>Tiene licencia <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a></p>
+                    <p>Su creador es <a href="http://hakim.se/" target="_blank">Hakim El Hattab</a></p>
+                    <p>Existe un editor gráfico que encapsula las tareas más habituales realizadas con Reveal.JS: <a href="http://slides.com" target="_blank">http://slides.com</a></p>
+                </section>
 
                 <section>
                     <h2>Desplazamiento horizontal</h2>
@@ -76,6 +88,13 @@
                     <h2>Cualquier código HTML/JavaScript/CSS es posible</h2>
                     <p>Por ejemplo, enlaces entre diapositivas como <a href="#/1">este</a></p>
                     <script src="https://gist.github.com/vicegd/9297823d204c6d2150de.js"></script>
+                </section>
+
+                <section id="custom_id">
+                    <h2>Identificación del nombre de la diapositiva</h2>
+                    <p>Por defecto, cada diapositiva se identifica a través de la URL con número correspondiente a su posición</p>
+                    <p>Sin embargo, esta diapositiva tiene como identificador <strong>custom_id</strong></p>
+                    <script src="https://gist.github.com/vicegd/cf1861b86dd50ba9244e.js"></script>
                 </section>
 
                 <section>
@@ -112,14 +131,35 @@
                 </section>
 
                 <section>
-                    <h2>Inserción de código fuente</h2>
+                    <h2>Tablas con información</h2>
+                    <table>
+                        <thead><tr>
+                            <th>Ciudad</th>
+                            <th>Año de fundación</th>
+                            <th>Población</th>
+                        </tr></thead>
+                        <tbody><tr>
+                            <td>Gijón</td>
+                            <td>Siglo V a. C.</td>
+                            <td>274290</td>
+                        </tr>
+                        <tr>
+                            <td>Oviedo</td>
+                            <td>761</td>
+                            <td>221870</td>
+                        </tr></tbody>
+                    </table>
+                    <script src="https://gist.github.com/vicegd/3bc3f410acceb2665a8d.js"></script>
+                </section>
+
+                <section>
+                    <h2>Código fuente</h2>
                     <pre><code class="hljs" data-trim contenteditable>
 public void sort(int[] elements) {
     for (int i = 1; i < elements.length; i++) {
         for (int j = elements.length - 1; j >= i; j--) {
-            if (elements[j-1] > elements[j]){
+            if (elements[j-1] > elements[j])
                 Util.interchange(elements, j-1, j);
-            }
         }
     }
 }
@@ -163,196 +203,235 @@ public void sort(int[] elements) {
                 </section>
 
                 <section>
-                    <h2>Diapositivas anidadas</h2>
+                    <h2>Diapositivas anidadas - Código</h2>
                     <script src="https://gist.github.com/vicegd/560c41ebd46cd7b1f82d.js"></script>
                 </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 <section>
-                    <h2>Export to PDF</h2>
-                    <p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-                    <iframe src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+                    <section id="themes">
+                        <h2>Estilos</h2>
+                        <p>Existen estilos que ya vienen incluidos en Reveal.JS:</p>
+                        <ul>
+                            <li><a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black</a> (por defecto)</li>
+                            <li><a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a></li>
+                            <li><a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a></li>
+                            <li><a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> (el inicial en esta presentación)</li>
+                            <li><a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a></li>
+                            <li><a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a></li>
+                            <li><a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a></li>
+                            <li><a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a></li>
+                            <li><a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a></li>
+                            <li><a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a></li>
+                            <li><a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Hojas de estilos</h2>
+                        <p>Cada estilo se corresponda con una hoja de estilos independiente</p>
+                        <p>La forma de cambiar el estilo es modificándolo por su nombre en la hoja de estilos de la página</p>
+                        <p>Por ejemplo, para utilizar el estilo <strong>Sky</strong> habría que configurar la página de la siguiente forma:</p>
+                        <pre><code class="hljs" data-trim contenteditable>
+    <link rel="stylesheet" href="css/theme/sky.css" id="theme">
+                        </code></pre>
+                    </section>
                 </section>
 
                 <section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-                        Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-                    </p>
-				</section>
+                    <section id="transitions">
+                        <h2>Transiciones</h2>
+                        <p>Existen diferentes tipos de transiciones en Reveal.JS:</p>
+                        <ul>
+                            <li><a href="?transition=none#/transitions">None</a></li>
+                            <li><a href="?transition=fade#/transitions">Fade</a></li>
+                            <li><a href="?transition=slide#/transitions">Slide</a></li>
+                            <li><a href="?transition=convex#/transitions">Convex</a></li>
+                            <li><a href="?transition=concave#/transitions">Concave</a> (el inicial en esta presentación)</li>
+                            <li><a href="?transition=zoom#/transitions">Zoom</a></li>
+                        </ul>
+                        <p>Se puede indicar mediante código:</p>
+                        <pre><code class="hljs" data-trim contenteditable>
+    Reveal.configure({ transition: 'concave' })
+                        </code></pre>
+                    </section>
+                    <section id="transitionsSpeed">
+                        <h2>Velocidad</h2>
+                        <p>La velocidad de cambio entre transiciones también se puede controlar</p>
+                        <ul>
+                            <li><a href="?transitionSpeed=default#/transitionsSpeed">Default</a></li>
+                            <li><a href="?transitionSpeed=slow#/transitionsSpeed">Slow</a> (el inicial en esta presentación)</li>
+                            <li><a href="?transitionSpeed=fast#/transitionsSpeed">Fast</a></li>
+                        </ul>
+                        <p>Se puede indicar mediante código:</p>
+                        <pre><code class="hljs" data-trim contenteditable>
+    Reveal.configure({ transitionSpeed: 'slow' })
+                        </code></pre>
+                    </section>
+                </section>
 
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
+                <section>
+                    <section id="fragments">
+                        <h2>Fragmentos</h2>
+                        <p>Se pueden mostrar avances parciales en la diapositiva a través de fragmentos</p>
+                        <p>Avanza...</p>
+                        <p class="fragment">... un paso más ...</p>
+                        <p><span class="fragment">... esto es una </span> <span class="fragment">diapositiva</span> <span class="fragment">fragmentada</span></p>
+                        <p class="fragment">Se pueden crear con la clase <strong>fragment</strong>:</p>
+                        <p class="fragment">Opcionalmente <strong>data-fragment-index</strong> determina el orden de aparición</p>
+                        <pre><code class="hljs" data-trim contenteditable>
+<p class="fragment">... un paso más ...</p>
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Estilos para fragmentos</h2>
+                        <p>Algunas posibilidades:</p>
+                        <p class="fragment grow">grow</p>
+                        <p class="fragment shrink">shrink</p>
+                        <p class="fragment fade-out">fade-out</p>
+                        <p class="fragment current-visible">visible only once</p>
+                        <pre><code class="hljs" data-trim contenteditable>
+<p class="fragment grow">grow</p>
+<p class="fragment shrink">shrink</p>
+<p class="fragment fade-out">fade-out</p>
+<p class="fragment current-visible">visible only once</p>
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Estilos para fragmentos</h2>
+                        <p>Más posibilidades:</p>
+                        <p class="fragment highlight-current-blue">blue only once</p>
+                        <p class="fragment highlight-red">highlight-red</p>
+                        <p class="fragment highlight-green">highlight-green</p>
+                        <p class="fragment highlight-blue">highlight-blue</p>
+                        <pre><code class="hljs" data-trim contenteditable>
+<p class="fragment highlight-current-blue">blue only once</p>
+<p class="fragment highlight-red">highlight-red</p>
+<p class="fragment highlight-green">highlight-green</p>
+<p class="fragment highlight-blue">highlight-blue</p>
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Fragmentos múltiples</h2>
+                        <p>Los estilos para los fragmentos se pueden combinar de forma secuencial</p>
+                        <p>Basta con anidar unos estilos con otros</p>
+                        <span class="fragment fade-in">
+                            <span class="fragment highlight-green">
+                                <span class="fragment fade-out">Aparezco, me pongo verde y desaparezco</span>
+                            </span>
+                        </span>
+                        <pre><code class="hljs" data-trim contenteditable>
+<span class="fragment fade-in">
+    <span class="fragment highlight-green">
+        <span class="fragment fade-out">
+            Aparezco, me pongo verde y desaparezco
+        </span>
+    </span>
+</span>
+                        </span>
+                        </code></pre>
+                    </section>
+                </section>
 
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+                <section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## Soporte para Markdown
 
-						```
-						<section data-markdown>
-						  ## Markdown support
+                            Es posible crear contenido utilizando *Markdown*
 
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
+                            Es utilizado en plataformas como GitHub, reddit, Diaspora, Stack Echange, OpenStreetMap o SourceForge
 
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
+                            Más información [aquí](http://daringfireball.net/projects/markdown/)
 
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
+                            ```
+                            <section data-markdown>
+                                ## Soporte para Markdown
 
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
+                                Es posible crear contenido utilizando *Markdown*
 
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
+                                Es utilizado en plataformas como GitHub, reddit, Diaspora,
+                                Stack Echange, OpenStreetMap o SourceForge
 
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
-					</section>
-				</section>
+                                Más información [aquí](http://daringfireball.net/projects/markdown/)
+                            </section>
+                            ```
+                        </script>
+                    </section>
+                    <section>
+                        <h2>Markdown - Código</h2>
+                        <script src="https://gist.github.com/vicegd/32990127d6a4ba20f0e3.js"></script>
+                    </section>
+                </section>
 
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+               <!-- <section>
+                    <section data-background="#dddddd">
+                        <h2>Slide Backgrounds</h2>
+                        <p>
+                            Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
+                        </p>
+                        <a href="#" class="navigate-down">
+                            <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
+                        <h2>Image Backgrounds</h2>
+                        <pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
+                    </section>
+                    <section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
+                        <h2>Tiled Backgrounds</h2>
+                        <pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
+                    </section>
+                    <section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
+                        <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+                            <h2>Video Backgrounds</h2>
+                            <pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
+                        </div>
+                    </section>
+                    <section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+                        <h2>... and GIFs!</h2>
+                    </section>
+                </section>-->
+
+                <section id="pdf">
+                    <h2>Imprimir/Exportar a PDF</h2>
+                    <p>Con Chrome es posible imprimir/exportar la presentación a PDF</p>
+                    <p>Se debe utilizar, en la URL, el atributo <strong>?print-pdf</strong></p>
+                    <p>Después, sólo tendrás que ir a <strong>Opciones -> Imprimir</strong> y seleccionar la impresora deseada en el navegador</p>
+                    <p>La salida se visualizará correctamente</p>
+                    <p>Haz clic <a href="?print-pdf">aquí</a> para probarlo</p>
+                </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<!--<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
 					<h2>Background Transitions</h2>
 					<p>
 						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
 					</p>
 					<pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
+				</section>-->
 
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
+		<!--		<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
 					<h2>Background Transitions</h2>
 					<p>
 						You can override background transitions per-slide.
 					</p>
 					<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
 				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							</tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
-
-
-				<section>
+-->
+	<!--			<section>
 					<h2>Global State</h2>
 					<p>
 						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
@@ -360,8 +439,8 @@ public void sort(int[] elements) {
 						apply broader style changes, like switching the page background.
 					</p>
 				</section>
-
-				<section data-state="customevent">
+-->
+	<!--			<section data-state="customevent">
 					<h2>State Events</h2>
 					<p>
 						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
@@ -372,8 +451,8 @@ Reveal.addEventListener( 'customevent', function() {
 } );
 					</code></pre>
 				</section>
-
-                <section>
+-->
+   <!--             <section>
 					<h2>Much more</h2>
 					<ul>
 						<li>Right-to-left support</li>
@@ -383,15 +462,15 @@ Reveal.addEventListener( 'customevent', function() {
 						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
 					</ul>
 				</section>
-
-				<section style="text-align: left;">
+-->
+	<!--			<section style="text-align: left;">
 					<h1>THE END</h1>
 					<p>
 						- <a href="http://slides.com">Try the online editor</a> <br>
 						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
 					</p>
 				</section>
-
+-->
 			</div>
 		</div>
 		<script src="lib/js/head.min.js"></script>
@@ -400,12 +479,36 @@ Reveal.addEventListener( 'customevent', function() {
 			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+				controls: true, // Display controls in the bottom right corner
+				progress: true, // Display a presentation progress bar
+                slideNumber: true, // Display the page number of the current slide
+				history: true, // Push each slide change to the browser history
+				keyboard: true, // Enable keyboard shortcuts for navigation
+                overview: true, // Enable the slide overview mode
+                center: true, // Vertical centering of slides
+                touch: true, // Enables touch navigation on devices with touch input
+                loop: false, // Loop the presentation
+                rtl: false, // Change the presentation direction to be RTL
+                fragments: true,  // Turns fragments on and off globally
+                embedded: false, // Flags if the presentation is running in an embedded mode, i.e. contained within a limited portion of the screen
+                help: true, // Flags if we should show a help overlay when the questionmark key is pressed
+                showNotes: false, // Flags if speaker notes should be visible to all viewers
+                autoSlide: 0, // Number of milliseconds between automatically proceeding to the next slide, disabled when set to 0, this value can be overwritten by using a data-autoslide attribute on your slides
+                autoSlideStoppable: true, // Stop auto-sliding after user input
+                mouseWheel: true, // Enable slide navigation via mouse wheel
+                hideAddressBar: true, // Hides the address bar on mobile devices
+                previewLinks: false, // Opens links in an iframe preview overlay
+                transition: 'concave', // none/fade/slide/convex/concave/zoom
+                transitionSpeed: 'slow', // default/slow/fast
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+                backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom  // Transition style for full page slide backgrounds
+
+                viewDistance: 3,  // Number of slides away from the current that are visible
+
+                parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'" // Parallax background image
+                parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px" // Parallax background size
+                parallaxBackgroundHorizontal: null, // Number of pixels to move the parallax background per slide
+                parallaxBackgroundVertical: null,
 
 				// Optional reveal.js plugins
 				dependencies: [
@@ -417,6 +520,7 @@ Reveal.addEventListener( 'customevent', function() {
 					{ src: 'plugin/notes/notes.js', async: true }
 				]
 			});
+
 		</script>
 	</body>
 </html>

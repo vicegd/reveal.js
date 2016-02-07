@@ -1,0 +1,19 @@
+#twoColumns .contentLeft {
+    float: left;
+    width: 50%;
+}
+
+#twoColumns .contentLeftSmaller {
+    float: left;
+    width: 30%;
+}
+
+#twoColumns .contentRight {
+    float: right;
+    width: 50%;
+}
+
+#twoColumns .contentRightBigger {
+    float: right;
+    width: 70%;
+}
