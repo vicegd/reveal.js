@@ -101,7 +101,7 @@
 
                 <section>
                     <h2>Desplazamiento horizontal</h2>
-                    <p>Puedes pulsar las flechas <strong>IZQUIERDA</strong> y <strong>DERECHA</strong> para desplazarte por las diapositivas</p>
+                    <p>Puedes pulsar las flechas <strong>IZQUIERDA</strong> y <strong>DERECHA</strong> para desplazarte por las diapositivas en sentido horizontal</p>
                 </section>
 
                 <section>
@@ -114,6 +114,18 @@
                     <h2>Zoom en ciertos elementos</h2>
                     <p>Pulsa <strong>ALT</strong> al mismo tiempo que sobre cualquier elemento para ampliar su tamaño (gracias a la librería <a href="http://lab.hakim.se/zoom-js">zoom.js</a>)</p>
                     <p>...Vuelve a pulsar <strong>ALT</strong> sobre cualquier otro elemento para volver al tamaño normal</p>
+                </section>
+
+                <section>
+                    <h2>Pantalla completa</h2>
+                    <p>Pulsa <strong>F</strong> para mostrar la presentación a pantalla completa</p>
+                    <p>...Pulsar <strong>ESC</strong> para salir del modo de pantalla completa</p>
+                </section>
+
+                <section>
+                    <h2>Principio y final</h2>
+                    <p>Pulsa <strong>INICIO (HOME)</strong> para ir a la primera diapositiva</p>
+                    <p>Pulsa <strong>FIN (END)</strong> para ir a la primera diapositiva</p>
                 </section>
 
                 <section>
@@ -219,9 +231,9 @@ public void sort(int[] elements) {
                 <section>
                     <section>
                         <h2>Diapositivas anidadas</h2>
-                        <p>Además de la típica secuenciación izquierda-derecha, también podemos trabajar en el sentido vertical arriba-abajo</p>
-                        <p>Pulsa <strong>Espacio</strong> para moverte por todas las diapositivas anidadas antes de continuar con la siguiente</p>
-                        <p>También puedes pulsar las flechas <strong>ARRIBA</strong> y <strong>ABAJO</strong> para desplazarte por ellas</p>
+                        <p>Además de la secuenciación izquierda-derecha, también podemos trabajar en el sentido vertical arriba-abajo</p>
+                        <p>Pulsa las flechas <strong>ARRIBA</strong> y <strong>ABAJO</strong> para desplazarte por las diapositivas en sentido vertical</p>
+                        <p>También puedes pulsar <strong>N</strong> o <strong>ESPACIO</strong> para avanzar a la siguiente diapositiva, ya sea vertical u horizontal</p>
                         <a href="#" class="navigate-down">
                             <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
                         </a>
@@ -233,6 +245,7 @@ public void sort(int[] elements) {
                     <section>
                         <h2>Diapositivas anidadas</h2>
                         <p>Tiempo de volver atrás...</p>
+                        <p>Para volver a la diapositiva anterior también puedes pulsar <strong>P</strong>, ya sea en sentido vertical u horizontal</p>
                         <br>
                         <a href="#/10">
                             <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
@@ -400,7 +413,7 @@ public void sort(int[] elements) {
                     </section>
                     <section>
                         <h2>Markdown externo</h2>
-                        <p>Es posible cargar dinámicamente Markdown externo:</p>
+                        <p>Es posible cargar dinámicamente Markdown un externo:</p>
                         <script src="https://gist.github.com/vicegd/dac2f2a62f5110972ca1.js"></script>
                         <script src="https://gist.github.com/vicegd/0fdf8d7418cfc641efe3.js"></script>
                         <p>Avanza a la siguiente diapositiva para ver cómo quedaría el ejemplo</p>
