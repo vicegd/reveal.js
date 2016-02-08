@@ -56,7 +56,7 @@
    			    </section>
 
                 <section>
-                    <h2>Obtención</h2>
+                    <h2>Información básica</h2>
                     <p>La Web oficial es <a href="http://lab.hakim.se/reveal-js/#/" target="_blank">Reveal.JS</a></p>
                     <p>Tiene licencia <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a></p>
                     <p>Su creador es <a href="http://hakim.se/" target="_blank">Hakim El Hattab</a></p>
@@ -81,6 +81,55 @@
 
                 <section>
                     <section>
+                        <h2>Instalación</h2>
+                        <p>Existen dos formas de instalar y utilizar Reveal.JS</p>
+                        <ul>
+                            <li><strong>Instalación básica</strong></li>
+                                <ul>
+                                    <li>Es suficiente en la mayoría de los casos</li>
+                                </ul>
+                            <li><strong>Instalación completa</strong></li>
+                                <ul>
+                                    <li>Para personas con conocimientos más avanzados</li>
+                                    <li>Para realizar computación en el lado del servidor</li>
+                                    <li>Da acceso a un servidor Web local</li>
+                                    <li>Algunas funcionalidades avanzadas como los markdowns externos lo necesitan</li>
+                                    <li>Sin embargo, podría utilizarse cualquier otro servidor Web en caso de disponer de él</li>
+                                </ul>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Instalación básica</h2>
+                        <p>Básicamente consiste en:</p>
+                        <ol>
+                            <li>Acceder a la <a href="https://github.com/hakimel/reveal.js/releases">última versión del framework en el repositorio</a></li>
+                            <li>Descargar y descomprimir el archivo (por ejemplo <strong>3.2.0.zip</strong></li>
+                            <li>Editar <code>index.html</code> y hacer las modificaciones que se consideren oportunas</li>
+                            <li>Abrir <code>index.html</code> en cualquier navegador Web</li>
+                        </ol>
+                    </section>
+                    <section>
+                        <h2>Instalación avanzada</h2>
+                        <ol>
+                            <li>Instalar el entorno de ejecución para JavaScript <a href="http://nodejs.org">Node</a></li>
+                            <li>Instalar el gestor de tareas para JavaScript <a href="http://gruntjs.com">Grunt</a></li>
+                            <li>Clonar el <a href="https://github.com/hakimel/reveal.js.git">repositorio GitHub de Reveal.JS</a></strong></li>
+                            <li>Instalar las dependecias del proyecto desde la carpeta del mismo con</li>
+                                <ul>
+                                    <li><code>>> npm install</code></li>
+                                </ul>
+                            <li>Iniciar el servidor Web embebido ejecutando desde la carpeta del proyecto</li>
+                                <ul>
+                                    <li><code>>> grunt serve</code></li>
+                                </ul>
+                            <li>Editar <code>index.html</code> y hacer las modificaciones que se consideren oportunas</li>
+                            <li>Abrir <code>index.html</code> accediendo a <a href=" http://localhost:8000">al puerto 8000 de localhost</a> en cualquier navegador Web</li>
+                        </ol>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
                         <h2>Configuración</h2>
                         <p>A <code>Reveal.initialize()</code> se le pueden pasar diferentes parámetros</p>
                         <p>Todos ellos tienen un valor por defecto para usos comunes si no se definen</p>
@@ -93,7 +142,7 @@
                     <section>
                         <h2>Algunas dependencias</h2>
                         <p><code>Reveal.initialize()</code> también se utiliza para indicar dependencias</p>
-                        <p>Por defecto Reveal.JS no necesita ninguna dependencia</p>
+                        <p>Por defecto, Reveal.JS no necesita ninguna dependencia</p>
                         <p>Hay varias que se utilizan habitualmente para potenciar la funcionalidad básica (se mostrarán a continuación)</p>
                         <script src="https://gist.github.com/vicegd/afe40038ec8f3de35968.js"></script>
                     </section>
@@ -413,13 +462,13 @@ public void sort(int[] elements) {
                     </section>
                     <section>
                         <h2>Markdown externo</h2>
-                        <p>Es posible cargar dinámicamente Markdown un externo:</p>
+                        <p>Es posible cargar dinámicamente Markdowns externos:</p>
                         <script src="https://gist.github.com/vicegd/dac2f2a62f5110972ca1.js"></script>
                         <script src="https://gist.github.com/vicegd/0fdf8d7418cfc641efe3.js"></script>
-                        <p>Avanza a la siguiente diapositiva para ver cómo quedaría el ejemplo</p>
+                        <!--<p>Avanza a la siguiente diapositiva para ver cómo quedaría el ejemplo</p>-->
                     </section>
-                    <section data-markdown="markdown/ejemplo.md">
-                    </section>
+                    <!--<section data-markdown="markdown/ejemplo.md">
+                    </section>-->
                 </section>
 
                <section>
@@ -477,7 +526,7 @@ Reveal.configure({ backgroundTransition: 'zoom' })
                     <p>Los eventos se capturan y tratan como cualquier otro evento JavaScript:</p>
                     <pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
 Reveal.addEventListener('myEvent', function() {
-    console.log('"myEvent" has fired' ); //o cualquier otro código
+    console.log('"myEvent" has fired'); //o cualquier otro código
 } );
                     </code></pre>
                 </section>
