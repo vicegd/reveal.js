@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="utf-8">
-		<title>reveal.js – The HTML Presentation Framework</title>
+		<title>reveal.js – Introducción a Reveal.JS</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="Introducción al framework de presentaciones Reveal.JS">
+		<meta name="author" content="Vicente García Díaz">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -73,10 +73,23 @@
                 </section>
 
                 <section>
-                    <h2>Ejemplo básico</h2>
+                    <h2>Hola Mundo</h2>
                     <p>Se puede realizar una presentación con muy poco código</p>
                     <script src="https://gist.github.com/vicegd/de7efe2d81ef434f6c6f.js"></script>
                     <a href="helloWorld.html" target="_blank">Ver ejemplo funcionando</a>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Configuración</h2>
+                        <p>A <code>Reveal.initialize()</code> se le pueden pasar diferentes parámetros</p>
+                        <p>Todos ellos tienen un valor por defecto para usos comunes si no se definen</p>
+                        <p>Pueden cambiarse de forma individual en tiempo de ejecución con <code>Reveal.configure()</code></p>
+                    </section>
+                    <section>
+                        <h2>Algunos valores</h2>
+                        <script src="https://gist.github.com/vicegd/0ea3de51b92e292923a9.js"></script>
+                    </section>
                 </section>
 
                 <section>
@@ -111,7 +124,7 @@
                 <section id="custom_id">
                     <h2>Identificación del nombre de la diapositiva</h2>
                     <p>Por defecto, cada diapositiva se identifica a través de la URL con número correspondiente a su posición</p>
-                    <p>Sin embargo, esta diapositiva tiene como identificador <strong>custom_id</strong></p>
+                    <p>Sin embargo, esta diapositiva tiene como identificador <code>custom_id</code></p>
                     <script src="https://gist.github.com/vicegd/cf1861b86dd50ba9244e.js"></script>
                 </section>
 
@@ -266,7 +279,7 @@ public void sort(int[] elements) {
                             <li><a href="?transition=concave#/transitions">Concave</a> (el inicial en esta presentación)</li>
                             <li><a href="?transition=zoom#/transitions">Zoom</a></li>
                         </ul>
-                        <p>Se puede indicar mediante código:</p>
+                        <p>Se puede cambiar mediante código:</p>
                         <pre><code class="hljs" data-trim contenteditable>
     Reveal.configure({ transition: 'concave' })
                         </code></pre>
@@ -279,7 +292,7 @@ public void sort(int[] elements) {
                             <li><a href="?transitionSpeed=slow#/transitionsSpeed">Slow</a> (el inicial en esta presentación)</li>
                             <li><a href="?transitionSpeed=fast#/transitionsSpeed">Fast</a></li>
                         </ul>
-                        <p>Se puede indicar mediante código:</p>
+                        <p>Se puede cambiar mediante código:</p>
                         <pre><code class="hljs" data-trim contenteditable>
     Reveal.configure({ transitionSpeed: 'slow' })
                         </code></pre>
@@ -293,8 +306,8 @@ public void sort(int[] elements) {
                         <p>Avanza...</p>
                         <p class="fragment">... un paso más ...</p>
                         <p><span class="fragment">... esto es una </span> <span class="fragment">diapositiva</span> <span class="fragment">fragmentada</span></p>
-                        <p class="fragment">Se pueden crear con la clase <strong>fragment</strong>:</p>
-                        <p class="fragment">Opcionalmente <strong>data-fragment-index</strong> determina el orden de aparición</p>
+                        <p class="fragment">Se pueden crear con la clase <code>fragment</code>:</p>
+                        <p class="fragment">Opcionalmente <code>data-fragment-index</code> determina el orden de aparición</p>
                         <pre><code class="hljs" data-trim contenteditable>
 <p class="fragment">... un paso más ...</p>
                         </code></pre>
@@ -378,117 +391,85 @@ public void sort(int[] elements) {
                         <h2>Markdown - Código</h2>
                         <script src="https://gist.github.com/vicegd/32990127d6a4ba20f0e3.js"></script>
                     </section>
+                    <section>
+                        <h2>Markdown externo</h2>
+                        <p>Es posible cargar dinámicamente Markdown externo:</p>
+                        <script src="https://gist.github.com/vicegd/dac2f2a62f5110972ca1.js"></script>
+                        <script src="https://gist.github.com/vicegd/0fdf8d7418cfc641efe3.js"></script>
+                        <p>Avanza a la siguiente diapositiva para ver cómo quedaría el ejemplo</p>
+                    </section>
+                    <section data-markdown="ejemplo.md">
+                    </section>
                 </section>
 
-               <!-- <section>
-                    <section data-background="#dddddd">
-                        <h2>Slide Backgrounds</h2>
-                        <p>
-                            Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-                        </p>
-                        <a href="#" class="navigate-down">
-                            <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-                        </a>
+               <section>
+                    <section data-background="#666666">
+                        <h2>Color de fondo</h2>
+                        <p>Con <code>data-background</code> se puede cambiar el color de fondo de una diapositiva concreta</p>
+                        <p>Se soportan todos los colores de CSS</p>
+                        <script src="https://gist.github.com/vicegd/69ae002a688c4ea38f89.js"></script>
                     </section>
-                    <section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-                        <h2>Image Backgrounds</h2>
-                        <pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
+                    <section data-background="images/background.jpg">
+                        <h2>Imagen de fondo</h2>
+                        <p>También se puede cambiar la imagen de fondo de una diapositiva</p>
+                        <p>Esta imagen puede estar contenida localmente o en otro servidor de Internet</p>
+                        <pre><code class="hljs">&lt;section data-background="imagen.png"&gt;</code></pre>
                     </section>
-                    <section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-                        <h2>Tiled Backgrounds</h2>
-                        <pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
+                    <section data-background="images/backgroundTiled.jpg" data-background-repeat="repeat" data-background-size="100px">
+                        <h2>Fondo "azulejado"</h2>
+                        <p>Si la imagen de fondo es muy pequeña, se puede utilizar la opción de repetición</p>
+                        <pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="imagen.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
                     </section>
                     <section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-                        <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-                            <h2>Video Backgrounds</h2>
+                        <div style="background-color: rgba(0, 0, 0, 0.2); color: #fff; padding: 20px;">
+                            <h2>Fondo con video</h2>
                             <pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
                         </div>
                     </section>
-                    <section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-                        <h2>... and GIFs!</h2>
+                    <section data-background="images/backgroundAnimated.gif">
+                        <h2>Fondo con video animado con GIFs</h2>
+                        <pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="imagen.gif"&gt;</code></pre>
                     </section>
-                </section>-->
+                </section>
+
+                <section data-background="#b5533c" data-background-transition="zoom">
+                    <h2>Transiciones específicas</h2>
+                    <p>Se puede cambiar el tipo de transición para una diapositiva individual</p>
+                    <p>En este ejemplo se utiliza el tipo de transición <strong>zoom</strong></p>
+                    <pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
+                    <p>También se puede cambiar mediante código:</p>
+                    <pre><code class="hljs" data-trim contenteditable>
+Reveal.configure({ backgroundTransition: 'zoom' })
+                    </code></pre>
+                </section>
+
+                <section data-state="testingDataState">
+                    <h2>Estado global para estilos</h2>
+                    <p>Incluyendo <code>data-state="VALOR"</code> se pueden cambiar algunos estilos de la diapositiva:</p>
+                    <script src="https://gist.github.com/vicegd/623652ca51474515ab46.js"></script>
+                    <p>Podria complementarse con el siguiente estilo:</p>
+                    <script src="https://gist.github.com/vicegd/185ee18c1a54f32e350a.js"></script>
+                </section>
+
+                <section data-state="myEvent">
+                    <h2>Estado global para eventos</h2>
+                    <p>Incluyendo <code>data-state="VALOR"</code> también se generan eventos</p>
+                    <p>Los eventos se capturan y tratan como cualquier otro evento JavaScript:</p>
+                    <pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
+Reveal.addEventListener('myEvent', function() {
+    console.log('"myEvent" has fired' ); //o cualquier otro código
+} );
+                    </code></pre>
+                </section>
 
                 <section id="pdf">
                     <h2>Imprimir/Exportar a PDF</h2>
                     <p>Con Chrome es posible imprimir/exportar la presentación a PDF</p>
-                    <p>Se debe utilizar, en la URL, el atributo <strong>?print-pdf</strong></p>
+                    <p>Se debe utilizar, en la URL, el atributo <code>?print-pdf</code></p>
                     <p>Después, sólo tendrás que ir a <strong>Opciones -> Imprimir</strong> y seleccionar la impresora deseada en el navegador</p>
                     <p>La salida se visualizará correctamente</p>
                     <p>Haz clic <a href="?print-pdf">aquí</a> para probarlo</p>
                 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-				<!--<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>-->
-
-		<!--		<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
--->
-	<!--			<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
--->
-	<!--			<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
--->
-   <!--             <section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
-				</section>
--->
-	<!--			<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
-				</section>
--->
 			</div>
 		</div>
 		<script src="lib/js/head.min.js"></script>
@@ -497,35 +478,34 @@ Reveal.addEventListener( 'customevent', function() {
 			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				controls: true, // Display controls in the bottom right corner
-				progress: true, // Display a presentation progress bar
-                slideNumber: true, // Display the page number of the current slide
-				history: true, // Push each slide change to the browser history
-				keyboard: true, // Enable keyboard shortcuts for navigation
-                overview: true, // Enable the slide overview mode
-                center: true, // Vertical centering of slides
-                touch: true, // Enables touch navigation on devices with touch input
-                loop: false, // Loop the presentation
-                rtl: false, // Change the presentation direction to be RTL
-                fragments: true,  // Turns fragments on and off globally
-                embedded: false, // Flags if the presentation is running in an embedded mode, i.e. contained within a limited portion of the screen
-                help: true, // Flags if we should show a help overlay when the questionmark key is pressed
-                showNotes: false, // Flags if speaker notes should be visible to all viewers
-                autoSlide: 0, // Number of milliseconds between automatically proceeding to the next slide, disabled when set to 0, this value can be overwritten by using a data-autoslide attribute on your slides
-                autoSlideStoppable: true, // Stop auto-sliding after user input
-                mouseWheel: true, // Enable slide navigation via mouse wheel
-                hideAddressBar: true, // Hides the address bar on mobile devices
-                previewLinks: false, // Opens links in an iframe preview overlay
-                transition: 'concave', // none/fade/slide/convex/concave/zoom
-                transitionSpeed: 'slow', // default/slow/fast
+				controls: true, //Display controls in the bottom right corner
+				progress: true, //Display a presentation progress bar
+                slideNumber: true, //Display the page number of the current slide
+				history: true, //Push each slide change to the browser history
+				keyboard: true, //Enable keyboard shortcuts for navigation
+                overview: true, //Enable the slide overview mode
+                center: true, //Vertical centering of slides
+                touch: true, //Enables touch navigation on devices with touch input
+                loop: false, //Loop the presentation
+                rtl: false, //Change the presentation direction to be RTL
+                fragments: true,  //Turns fragments on and off globally
+                embedded: false, //Flags if the presentation is running in an embedded mode, i.e. contained within a limited portion of the screen
+                help: true, //Flags if we should show a help overlay when the questionmark key is pressed
+                showNotes: false, //Flags if speaker notes should be visible to all viewers
+                autoSlide: 0, //Number of milliseconds between automatically proceeding to the next slide, disabled when set to 0, this value can be overwritten by using a data-autoslide attribute on your slides
+                autoSlideStoppable: true, //Stop auto-sliding after user input
+                mouseWheel: true, //Enable slide navigation via mouse wheel
+                hideAddressBar: true, //Hides the address bar on mobile devices
+                previewLinks: false, //Opens links in an iframe preview overlay
+                transition: 'concave', //none/fade/slide/convex/concave/zoom
+                transitionSpeed: 'slow', //default/slow/fast
+                backgroundTransition: 'default', //none/fade/slide/convex/concave/zoom  //Transition style for full page slide backgrounds
 
-                backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom  // Transition style for full page slide backgrounds
 
-                viewDistance: 3,  // Number of slides away from the current that are visible
-
-                parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'" // Parallax background image
-                parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px" // Parallax background size
-                parallaxBackgroundHorizontal: null, // Number of pixels to move the parallax background per slide
+                viewDistance: 7,  //Number of slides away from the current that are visible
+                parallaxBackgroundImage: '', //e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'" // Parallax background image
+                parallaxBackgroundSize: '', //CSS syntax, e.g. "2100px 900px" // Parallax background size
+                parallaxBackgroundHorizontal: null, //Number of pixels to move the parallax background per slide
                 parallaxBackgroundVertical: null,
 
 				// Optional reveal.js plugins
@@ -538,6 +518,10 @@ Reveal.addEventListener( 'customevent', function() {
 					{ src: 'plugin/notes/notes.js', async: true }
 				]
 			});
+
+            Reveal.addEventListener('myEvent', function() {
+                console.log('"myEvent" has fired'); //o cualquier otro código
+            } );
 
 		</script>
 	</body>

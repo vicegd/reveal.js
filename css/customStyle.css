@@ -17,3 +17,9 @@
     float: right;
     width: 70%;
 }
+
+.testingDataState {
+    border: dashed;
+    margin: 10px;
+    background-color: green;
+}
