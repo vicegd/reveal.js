@@ -144,6 +144,7 @@
                         <p>A <code>Reveal.initialize()</code> se le pueden pasar diferentes parámetros</p>
                         <p>Todos ellos tienen un valor por defecto para usos comunes si no se definen</p>
                         <p>Pueden cambiarse de forma individual en tiempo de ejecución con <code>Reveal.configure()</code></p>
+                        <p>Veremos algunos ejemplos a continuación</p>
                     </section>
                     <section>
                         <h2>Algunos parámetros</h2>
@@ -490,7 +491,7 @@ public void sort(int[] elements) {
                     </section>-->
                 </section>
 
-               <section>
+               <section data-state="parallaxOff">
                     <section data-background="#666666">
                         <h2>Color de fondo</h2>
                         <p>Con <code>data-background</code> se puede cambiar el color de fondo de una diapositiva concreta</p>
@@ -520,7 +521,32 @@ public void sort(int[] elements) {
                     </section>
                 </section>
 
-                <section data-background="#b5533c" data-background-transition="zoom">
+                <section data-state="parallax">
+                    <h2 style="color:white">Fondo desplazable</h2>
+                </section>
+
+                <section data-state="parallax">
+                    <h2 style="color:white">En sentido horizontal</h2>
+                </section>
+
+                <section data-state="parallax">
+                    <h2 style="color:white">Un poco más...</h2>
+                </section>
+
+                <section data-state="parallax">
+                    <section>
+                        <h2 style="color:white">Ahora en sentido vertical</h2>
+                    </section>
+                    <section>
+                        <h2 style="color:white">Un poco más</h2>
+                    </section>
+                    <section>
+                        <h2 style="color:white">Esta es una forma de configurarlo:</h2>
+                        <script src="https://gist.github.com/vicegd/fdd6883b04074e21832b.js"></script>
+                    </section>
+                </section>
+
+                <section data-background="#b5533c" data-background-transition="zoom" data-state="parallaxOff">
                     <h2>Transiciones específicas</h2>
                     <p>Se puede cambiar el tipo de transición para una diapositiva individual</p>
                     <p>En este ejemplo se utiliza el tipo de transición <strong>zoom</strong></p>
@@ -590,11 +616,11 @@ Reveal.addEventListener('myEvent', function() {
                 backgroundTransition: 'default', //none/fade/slide/convex/concave/zoom  //Transition style for full page slide backgrounds
 
 
-                viewDistance: 7,  //Number of slides away from the current that are visible
-                parallaxBackgroundImage: '', //e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'" // Parallax background image
-                parallaxBackgroundSize: '', //CSS syntax, e.g. "2100px 900px" // Parallax background size
-                parallaxBackgroundHorizontal: null, //Number of pixels to move the parallax background per slide
-                parallaxBackgroundVertical: null,
+               // viewDistance: 7,  //Number of slides away from the current that are visible
+               // parallaxBackgroundImage: '', //e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'" // Parallax background image
+               // parallaxBackgroundSize: '', //CSS syntax, e.g. "2100px 900px" // Parallax background size
+               // parallaxBackgroundHorizontal: null, //Number of pixels to move the parallax background per slide
+               // parallaxBackgroundVertical: null,
 
 				// Optional reveal.js plugins
 				dependencies: [
@@ -609,7 +635,22 @@ Reveal.addEventListener('myEvent', function() {
 
             Reveal.addEventListener('myEvent', function() {
                 console.log('"myEvent" has fired'); //o cualquier otro código
-            } );
+            });
+
+            Reveal.addEventListener('parallax', function() {
+                Reveal.configure({
+                    parallaxBackgroundImage: 'images/parallax.jpg', //Parallax background image
+                    parallaxBackgroundSize: '', //CSS syntax, e.g. "2100px 900px" // Parallax background size
+                    parallaxBackgroundHorizontal: 100, //Number of pixels to move the parallax background per slide (horizontal)
+                    parallaxBackgroundVertical: 100 //Number of pixels to move the parallax background per slide (vertical)
+                });
+            });
+
+            Reveal.addEventListener('parallaxOff', function() {
+                Reveal.configure({
+                    parallaxBackgroundImage: '', // Parallax background image
+                });
+            });
 
 		</script>
 	</body>
