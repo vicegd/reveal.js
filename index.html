@@ -546,15 +546,20 @@ public void sort(int[] elements) {
                     </section>
                 </section>
 
-                <section data-background="#b5533c" data-background-transition="zoom" data-state="parallaxOff">
-                    <h2>Transiciones específicas</h2>
-                    <p>Se puede cambiar el tipo de transición para una diapositiva individual</p>
-                    <p>En este ejemplo se utiliza el tipo de transición <strong>zoom</strong></p>
-                    <pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-                    <p>También se puede cambiar mediante código:</p>
-                    <pre><code class="hljs" data-trim contenteditable>
-Reveal.configure({ backgroundTransition: 'zoom' })
-                    </code></pre>
+                <section data-state="parallaxOff">
+                    <section>
+                        <h2>Transiciones de fondo específicas</h2>
+                        <p>Se puede cambiar el tipo de transición para una diapositiva individual</p>
+                    </section>
+                    <section data-background="#b5533c" data-background-transition="zoom">
+                        <h2>Ejemplo</h2>
+                        <p>En este ejemplo se utiliza el tipo de transición <strong>zoom</strong></p>
+                        <pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
+                        <p>También se puede cambiar mediante código:</p>
+                        <pre><code class="hljs" data-trim contenteditable>
+                          Reveal.configure({ backgroundTransition: 'zoom' })
+                        </code></pre>
+                    </section>
                 </section>
 
                 <section data-state="testingDataState">
